@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск пользователя среди всех пользователей windows 2</title>
+  </head>
+  <body>
+    <h1>Поиск пользователя windows</h1>
+    <label for="input">Введите имя пользователя windows и нажмите проверить:</label><br/>
+    <input type="text" id="input" placeholder="Введите имя"><br/><br/>
+    <button onclick="goToPage2()">Проверить</button>
+
+    <script>
+      function goToPage2() {
+        const input = document.getElementById("input").value;
+        window.location.href = `page2.html?text=${input}`;
+      }
+    </script>
+  </body>
+</html>

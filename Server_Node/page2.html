@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style="height: 100vh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск пользователя среди всех пользователей windows</title>
+  </head>
+  
+  <body style="background-image: url('https://phonoteka.org/uploads/posts/2021-03/1616416423_8-p-nebesnii-fon-8.jpg'); background-size: cover ; background-repeat: no-repeat; background-position: center center; height: 100%;">
+    <div class="ivMainPage2" style="margin: 0 auto; display: block; width: 50%;">
+        <script>
+          const urlParams = new URLSearchParams(window.location.search);
+          const nameForSeek = urlParams.get('name');
+          window.addEventListener('load', function() {
+              findSame();
+            });
+        </script>
+      <h1><p id="otvetHeader"></p></h1>    
+      <button onclick="geToIndex()">Назад</button> <br/>
+      <br/>
+      <p>Кнопка для просмотра списка всех найденных пользователей вашей OS Windows </p>
+      <button onclick="lookAtAllUsers()">Показать весь список</button> <br/>
+      <p id="listUsers" ></p>
+    </divd>
+  </body>
+
+</html>
+
+<script>
+  function geToIndex(){
+      window.location.href=`index.html`;
+  }
+</script>
+
+<script>
+  function findSame() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const nameForSeek = urlParams.get('name');        
+    document.getElementById("otvetHeader").textContent = (isUser=='true')? 'Пользователь '+ nameForSeek +' есть': 'Пользователя '+ nameForSeek +' нет';
+  }
+  
+  function lookAtAllUsers() {    
+        document.getElementById("listUsers").textContent = JSON.stringify(listUsers);    
+  }
+</script>

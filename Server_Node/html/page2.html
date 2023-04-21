@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск пользователя среди всех пользователей windows</title>
+  </head>
+  <body>
+    <h1>Пользователя <ВАСЯ> нет</h1>
+      <button onclick="geToIndex()">Назад</button> <br/>
+      <input type="text" id = "lookerFor"></input>
+      <input type="text" id = "lookerAll"></input>
+
+
+  </body>
+</html>
+
+<script>
+  function geToIndex(){
+      window.location.href=`index.html`;
+  }
+</script>
+
+<script>
+  function findSame() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const nameForSeek = urlParams.get('name');
+    document.getElementById("lookerFor").value = nameForSeek;
+    const input = document.getElementById("lookerFor").value;
+    
+    
+
+  }
+</script>

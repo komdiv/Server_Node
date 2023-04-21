@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html style="height: 100vh">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск пользователя среди всех пользователей windows</title>
+  </head>
+
+  <body style="background-image: url('https://phonoteka.org/uploads/posts/2021-03/1616416423_8-p-nebesnii-fon-8.jpg'); background-size: cover ; background-repeat: no-repeat; background-position: center center; height: 100%;">
+    <div class="divMainIndex" style="margin: 0 auto; display: block; width: 50%;">
+    <h1>Поиск пользователя windows</h1>
+    <label for="inputNameUser">Введите имя пользователя windows и нажмите проверить:</label><br/>
+    <input type="text" id="inputNameUser" placeholder="Введите имя" oninput="repitter()"><br/><br/>
+    <button onclick="goToPage2()" id="buttonCheck">Проверить</button>
+    </div>
+  </body>
+  
+</html>
+
+<script>  
+  function goToPage2() {
+    const input = document.getElementById("inputNameUser").value;
+    window.location.href = `page2.html?name=${input}`;
+  }
+  function repitter() {        
+        document.getElementById("buttonCheck").textContent = ' Проверить ' + document.getElementById("inputNameUser").value;    
+  }
+</script>
